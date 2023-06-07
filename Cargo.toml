@@ -1,0 +1,20 @@
+[package]
+name = "poise-bot"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+strip = true
+lto = true
+
+[dependencies]
+anyhow = "1.0.71"
+mobc = "0.8.1"
+mobc-redis = "0.8.0"
+poise = "0.5.5"
+redis = {version="0.23.0", features=["aio", "tokio-comp"]}
+tokio = {version="1.28.2", features=["rt-multi-thread", "macros"]}
+tracing = "0.1.37"
+tracing-subscriber = "0.3.17"
